@@ -47,6 +47,7 @@
                         'slide-up': 'slideUp 0.4s ease-out',
                         'wave-hand': 'waveHand 1.5s ease-in-out infinite',
                         'astronaut-float': 'astronautFloat 6s ease-in-out infinite',
+                        'maskot-float': 'maskotFloat 5s ease-in-out infinite',
                     },
                     keyframes: {
                         wiggle: {
@@ -78,6 +79,11 @@
                             '50%': { transform: 'translateY(-15px) translateX(-5px)' },
                             '75%': { transform: 'translateY(-35px) translateX(-10px)' },
                         },
+                        maskotFloat: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg) scale(1)' },
+                            '25%': { transform: 'translateY(-20px) rotate(-5deg) scale(1.05)' },
+                            '75%': { transform: 'translateY(-30px) rotate(5deg) scale(0.95)' },
+                        }
                     }
                 }
             }
@@ -226,6 +232,18 @@
             75% { transform: translateY(-25px) rotate(5deg); }
         }
         
+        /* Animasi maskot */
+        .maskot-anim {
+            animation: maskotFloat 5s ease-in-out infinite;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+        }
+        
+        @keyframes maskotFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-20px) rotate(-5deg) scale(1.05); }
+            75% { transform: translateY(-30px) rotate(5deg) scale(0.95); }
+        }
+        
         /* Style untuk gambar metode agar full/tidak terpotong */
         .method-img-container {
             background-color: #f8fafc;
@@ -238,6 +256,21 @@
             height: 100%;
             object-fit: contain;
             background-color: #f0f9fa;
+        }
+        
+        /* Logo di navbar */
+        .navbar-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .navbar-logo-sm {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            object-fit: cover;
         }
         
         /* Responsive untuk floating buttons di mobile */
@@ -262,12 +295,14 @@
     <!-- ==================== NAVIGATION ==================== -->
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 navbar-transparent py-3 md:py-4">
         <div class="container mx-auto px-5 md:px-8 flex justify-between items-center">
-            <!-- Logo -->
+            <!-- Logo dengan gambar baru -->
             <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden shadow-md transition group-hover:shadow-lg flex items-center justify-center bg-white p-1">
-                    <!-- Logo Placeholder - Ganti dengan logo Anda jika ada -->
-                    <span class="font-extrabold text-brand-primary text-lg">SK</span>
-                </div>
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjqfD6EEkQ4vD_ylDnyhx_vNHsqD33mLmYkWSh9FKo962qZHMrz1qINqxcLanzyq3wTpDK9yJ8lwpJze6iTOgAoV9tphs-Mg72DS-oHMVtpLPIwL-DZVa0kn8Yk4XA6NHzoLU1igcHZqjZeX_3ygZ_SIo2xA7x3cd9PZkd-5RRYeprsVzecb9uhwCUCRzB8" 
+                     alt="Sahabat Khitan Kediri Logo" 
+                     class="navbar-logo hidden md:block transition group-hover:scale-105">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjqfD6EEkQ4vD_ylDnyhx_vNHsqD33mLmYkWSh9FKo962qZHMrz1qINqxcLanzyq3wTpDK9yJ8lwpJze6iTOgAoV9tphs-Mg72DS-oHMVtpLPIwL-DZVa0kn8Yk4XA6NHzoLU1igcHZqjZeX_3ygZ_SIo2xA7x3cd9PZkd-5RRYeprsVzecb9uhwCUCRzB8" 
+                     alt="Sahabat Khitan Kediri Logo" 
+                     class="navbar-logo-sm md:hidden transition group-hover:scale-105">
                 <div class="leading-tight">
                     <p class="text-white font-bold text-base md:text-lg">Sahabat Khitan Kediri</p>
                     <p class="text-accent-light text-xs tracking-wide">Dermo • Mojoroto</p>
@@ -279,6 +314,7 @@
                 <a href="#home" class="nav-link hover:text-accent-light transition">Beranda</a>
                 <a href="#tentang" class="nav-link hover:text-accent-light transition">Tentang</a>
                 <a href="#metode" class="nav-link hover:text-accent-light transition">Metode</a>
+                <a href="#paket" class="nav-link hover:text-accent-light transition">Paket</a>
                 <a href="#layanan" class="nav-link hover:text-accent-light transition">Layanan</a>
                 <a href="#galeri" class="nav-link hover:text-accent-light transition">Galeri</a>
                 <a href="#artikel" class="nav-link hover:text-accent-light transition">Artikel</a>
@@ -297,6 +333,7 @@
                 <a href="#home" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">🏠 Beranda</a>
                 <a href="#tentang" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">ℹ️ Tentang</a>
                 <a href="#metode" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">🔧 Metode</a>
+                <a href="#paket" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">📦 Paket</a>
                 <a href="#layanan" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">👶 Layanan</a>
                 <a href="#galeri" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">🖼️ Galeri</a>
                 <a href="#artikel" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">📝 Artikel</a>
@@ -384,13 +421,13 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-5xl mx-auto">
                 <div data-aos="fade-up" data-aos-delay="0">
                     <div class="text-4xl md:text-5xl font-extrabold text-brand-primary counter-value">
-                        <span class="count" data-target="10">0</span>+
+                        <span class="count" data-target="16">0</span>+
                     </div>
                     <p class="text-gray-500 mt-2 font-medium text-sm md:text-base">Tahun Pengalaman</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="100">
                     <div class="text-4xl md:text-5xl font-extrabold text-brand-primary counter-value">
-                        <span class="count" data-target="5000">0</span>+
+                        <span class="count" data-target="2000">0</span>+
                     </div>
                     <p class="text-gray-500 mt-2 font-medium text-sm md:text-base">Pasien Puas</p>
                 </div>
@@ -418,30 +455,35 @@
                  class="w-full h-full object-contain">
         </div>
         
-        
-
         <div class="container mx-auto max-w-4xl text-center relative z-20" data-aos="fade-up">
             <span class="text-accent font-semibold uppercase tracking-wider text-sm">Tentang Kami</span>
             <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">Sahabat Khitan Kediri</h2>
             <div class="w-16 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
             <p class="text-gray-600 mt-6 leading-relaxed text-base md:text-lg">
-                <strong>Sahabat Khitan Kediri</strong> hadir sebagai klinik khitan modern terpercaya di Kediri. 
+                <strong>Sahabat Khitan Kediri</strong> adalah layanan unggulan dari <strong>Klinik Pratama Rawat Jalan Tegar Medika</strong>. 
+                Dikerjakan oleh dokter dengan pengalaman panjang sejak 2009 dan jam terbang lebih dari 2000 pasien khitan. 
+                Dengan berbagai metode terkini mencoba menjadikan khitan sebagai pengalaman yang menyenangkan.
                 Berlokasi strategis di <strong>Jl. Gunung Agung, Dermo, Kecamatan Mojoroto, Kota Kediri</strong>, 
-                kami mengutamakan kenyamanan pasien dengan metode minim nyeri, fasilitas ramah anak, dan layanan konsultasi Gratis. 
-                Didukung tenaga medis profesional, kami siap melayani sunat untuk bayi, anak-anak, hingga dewasa 
-                dengan hasil rapi dan penyembuhan optimal.
+                kami mengutamakan kenyamanan pasien dengan metode minim nyeri, fasilitas ramah anak, dan layanan konsultasi Gratis.
             </p>
         </div>
     </section>
 
     <!-- ==================== WHY CHOOSE US (KEUNGGULAN) ==================== -->
-    <section id="keunggulan" class="py-20 px-5 bg-white">
-        <div class="container mx-auto">
+    <section id="keunggulan" class="py-20 px-5 bg-white relative overflow-hidden">
+        <!-- Maskot Gambar Bergerak -->
+        <div class="absolute top-10 right-5 md:right-20 lg:right-36 z-10 w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 maskot-anim" data-aos="fade-left" data-aos-delay="400">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjx8Ncj_Tepv2mrpf82jo0ruMdHkT2LBC6d9naeDnCBD67wrIw7m4SoEfXS86z4SzttY4wC1e4wWhCAM0iKdfMi6kzoqVTv0z6f_wFw68vjo5bxjHe7ffFbAxz_8S41PiiQWJp4grYMcNYizuIYOiw2w5pt6JIC5Tt7rEptbyLqfrCC_pz9YDrR7p4FG0ev" 
+                 alt="Maskot Sahabat Khitan" 
+                 class="w-full h-full object-contain">
+        </div>
+        
+        <div class="container mx-auto relative z-20">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
                 <span class="text-accent font-semibold uppercase tracking-wider text-sm">Mengapa Memilih Kami?</span>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">Keunggulan Sahabat Khitan</h2>
                 <div class="w-16 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
-                <p class="text-gray-500 mt-4">Kami memahami kecemasan setiap orang tua dan memberikan solusi terbaik</p>
+                <p class="text-gray-500 mt-4">Aman, Sehat, Modern, Terjangkau</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -450,35 +492,35 @@
                     <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-5">
                         <i class="fas fa-user-md text-accent text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-2">Dokter Profesional</h3>
-                    <p class="text-gray-500 text-sm">Tenaga medis berpengalaman & tersertifikasi, siap menangani sunat anak hingga dewasa dengan aman.</p>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Dokter & Tenaga Medis Berpengalaman</h3>
+                    <p class="text-gray-500 text-sm">Dikerjakan oleh dokter dengan pengalaman sejak 2009 dan jam terbang lebih dari 2000 pasien khitan.</p>
                 </div>
                 
                 <!-- Keunggulan 2 -->
                 <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-md" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <i class="fas fa-shield-heart text-accent text-2xl"></i>
+                        <i class="fas fa-hand-holding-heart text-accent text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-2">Aman & Nyaman</h3>
-                    <p class="text-gray-500 text-sm">Metode minim nyeri, tanpa trauma, dengan anestesi lokal. Anak tetap tenang selama prosedur.</p>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Pelayanan Ramah & Profesional</h3>
+                    <p class="text-gray-500 text-sm">Dokter dan staf yang ramah, baik hati, menjadikan khitan sebagai pengalaman yang menyenangkan.</p>
                 </div>
                 
                 <!-- Keunggulan 3 -->
                 <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-md" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <i class="fas fa-gamepad text-accent text-2xl"></i>
+                        <i class="fas fa-microscope text-accent text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-2">Fasilitas Lengkap</h3>
-                    <p class="text-gray-500 text-sm">Dilengkapi TV, games, dan area bermain agar si kecil tidak tegang dan merasa nyaman.</p>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Peralatan Medis Modern</h3>
+                    <p class="text-gray-500 text-sm">Menggunakan peralatan medis terkini dan metode khitan modern untuk hasil yang optimal.</p>
                 </div>
                 
                 <!-- Keunggulan 4 -->
                 <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-md" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <i class="fas fa-clock text-accent text-2xl"></i>
+                        <i class="fas fa-broom text-accent text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-2">Konsultasi Gratis</h3>
-                    <p class="text-gray-500 text-sm">Langsung dengan dokter via WhatsApp kapan saja. Sebelum & sesudah tindakan tetap terpantau.</p>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Ruang Khitan Bersih & Nyaman</h3>
+                    <p class="text-gray-500 text-sm">Tempat khitan yang bersih, higienis, dan ramah anak dengan dekorasi ceria.</p>
                 </div>
                 
                 <!-- Keunggulan 5 -->
@@ -486,74 +528,36 @@
                     <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-5">
                         <i class="fas fa-tag text-accent text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-2">Harga Terjangkau</h3>
-                    <p class="text-gray-500 text-sm">Biaya sunat kompetitif dengan kualitas layanan premium. Tersedia berbagai paket pilihan.</p>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Biaya Terjangkau</h3>
+                    <p class="text-gray-500 text-sm">Biaya khitan kompetitif dengan kualitas layanan premium. Tersedia berbagai pilihan paket.</p>
                 </div>
                 
                 <!-- Keunggulan 6 -->
                 <div class="card-hover bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-md" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-5">
-                        <i class="fas fa-map-marker-alt text-accent text-2xl"></i>
+                        <i class="fas fa-gift text-accent text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-2">Lokasi Strategis</h3>
-                    <p class="text-gray-500 text-sm">Jl. Gunung Agung, Dermo, Mojoroto, Kediri. Mudah diakses, parkir luas & aman.</p>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2">Dapat Hadiah & Sertifikat</h3>
+                    <p class="text-gray-500 text-sm">Setiap pasien mendapatkan hadiah mainan, multivitamin, dan sertifikat khitan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== METODE SUNAT TERKINI ==================== -->
+    <!-- ==================== METODE SUNAT ==================== -->
     <section id="metode" class="py-20 px-5 bg-brand-lighter/30 relative overflow-hidden">
         <div class="container mx-auto relative z-20">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
                 <span class="text-accent font-semibold uppercase tracking-wider text-sm">Teknologi Modern</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">Metode Sunat Terkini</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">Metode Khitan</h2>
                 <div class="w-16 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
-                <p class="text-gray-500 mt-4">Kami menguasai berbagai metode sunat modern untuk hasil terbaik</p>
+                <p class="text-gray-500 mt-4">Rekomendasi pemilihan metode disesuaikan ukuran diameter penis dan tipe penis</p>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <!-- Metode 1: Laser -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Metode 1: Klem -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="0">
-                    <div class="method-img-container h-56 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
-                        <img src="https://infokhitan.com/laser-png/" 
-                             alt="Metode Laser" 
-                             class="method-img">
-                    </div>
-                    <div class="p-6 text-center">
-                        <div class="w-14 h-14 bg-gradient-to-br from-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-laser text-white text-xl"></i>
-                        </div>
-                        <h3 class="font-bold text-brand-dark text-lg">Metode Laser</h3>
-                        <p class="text-gray-500 text-sm mt-2">Presisi tinggi, minim nyeri, pemulihan cepat</p>
-                        <button onclick="openModal('modal-price-laser')" class="mt-4 bg-accent hover:bg-accent/90 text-white font-bold py-2.5 px-5 rounded-full text-sm inline-flex items-center gap-2 transition shadow-md w-full justify-center">
-                            <i class="fas fa-tag"></i> Lihat Detail Harga
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Metode 2: Cauter -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-                    <div class="method-img-container h-56 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
-                        <img src="https://infokhitan.com/laser-png/" 
-                             alt="Metode Cauter" 
-                             class="method-img">
-                    </div>
-                    <div class="p-6 text-center">
-                        <div class="w-14 h-14 bg-gradient-to-br from-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-bolt text-white text-xl"></i>
-                        </div>
-                        <h3 class="font-bold text-brand-dark text-lg">Metode Cauter</h3>
-                        <p class="text-gray-500 text-sm mt-2">Tanpa darah, tanpa jahitan, proses cepat</p>
-                        <button onclick="openModal('modal-price-cauter')" class="mt-4 bg-accent hover:bg-accent/90 text-white font-bold py-2.5 px-5 rounded-full text-sm inline-flex items-center gap-2 transition shadow-md w-full justify-center">
-                            <i class="fas fa-tag"></i> Lihat Detail Harga
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Metode 3: Klem -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200">
-                    <div class="method-img-container h-56 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
+                    <div class="method-img-container h-48 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
                         <img src="https://infokhitan.com/klamp-png/" 
                              alt="Metode Klem" 
                              class="method-img">
@@ -563,54 +567,78 @@
                             <i class="fas fa-compress text-white text-xl"></i>
                         </div>
                         <h3 class="font-bold text-brand-dark text-lg">Metode Klem</h3>
-                        <p class="text-gray-500 text-sm mt-2">Tanpa jahitan, penyembuhan 5-7 hari</p>
+                        <p class="text-gray-500 text-sm mt-1">Rekomendasi untuk khitan bayi dan yang masih memakai diapers</p>
+                        <div class="mt-3 text-left text-xs text-gray-600 bg-gray-50 p-3 rounded-lg">
+                            <p class="font-semibold text-brand-dark">Kelebihan:</p>
+                            <ul class="list-disc pl-4 space-y-0.5">
+                                <li>Bisa terkena air/mandi</li>
+                                <li>Tanpa Jahitan</li>
+                                <li>Tanpa Balutan</li>
+                            </ul>
+                        </div>
                         <button onclick="openModal('modal-price-klem')" class="mt-4 bg-accent hover:bg-accent/90 text-white font-bold py-2.5 px-5 rounded-full text-sm inline-flex items-center gap-2 transition shadow-md w-full justify-center">
                             <i class="fas fa-tag"></i> Lihat Detail Harga
                         </button>
                     </div>
                 </div>
                 
-                <!-- Metode 4: Gomco -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="300">
-                    <div class="method-img-container h-56 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
-                        <img src="https://infokhitan.com/gomco-png/" 
-                             alt="Metode Gomco" 
-                             class="method-img">
-                    </div>
-                    <div class="p-6 text-center">
-                        <div class="w-14 h-14 bg-gradient-to-br from-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-circle text-white text-xl"></i>
-                        </div>
-                        <h3 class="font-bold text-brand-dark text-lg">Metode Gomco</h3>
-                        <p class="text-gray-500 text-sm mt-2">Tanpa jahitan, hasil rapi, penyembuhan 5-7 hari</p>
-                        <button onclick="openModal('modal-price-gomco')" class="mt-4 bg-accent hover:bg-accent/90 text-white font-bold py-2.5 px-5 rounded-full text-sm inline-flex items-center gap-2 transition shadow-md w-full justify-center">
-                            <i class="fas fa-tag"></i> Lihat Detail Harga
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Metode 5: Lem -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="400">
-                    <div class="method-img-container h-56 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
+                <!-- Metode 2: Sealer/Lem -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="method-img-container h-48 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
                         <img src="https://infokhitan.com/work/rumah-sunat-bangkalan/lem-gomco-png/" 
-                             alt="Metode Lem" 
+                             alt="Metode Sealer/Lem" 
                              class="method-img">
                     </div>
                     <div class="p-6 text-center">
                         <div class="w-14 h-14 bg-gradient-to-br from-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-droplet text-white text-xl"></i>
                         </div>
-                        <h3 class="font-bold text-brand-dark text-lg">Metode Lem</h3>
-                        <p class="text-gray-500 text-sm mt-2">Tanpa jahitan, tanpa darah, penyembuhan 5-7 hari</p>
+                        <h3 class="font-bold text-brand-dark text-lg">Sealer / Lem</h3>
+                        <p class="text-gray-500 text-sm mt-1">Metode paling banyak dipilih karena kenyamanannya untuk khitan dengan ukuran kecil</p>
+                        <div class="mt-3 text-left text-xs text-gray-600 bg-gray-50 p-3 rounded-lg">
+                            <p class="font-semibold text-brand-dark">Kelebihan:</p>
+                            <ul class="list-disc pl-4 space-y-0.5">
+                                <li>Hasil rapi</li>
+                                <li>Tanpa balutan</li>
+                                <li>Tanpa terpasang alat</li>
+                                <li>Penyembuhan lebih cepat</li>
+                            </ul>
+                        </div>
                         <button onclick="openModal('modal-price-lem')" class="mt-4 bg-accent hover:bg-accent/90 text-white font-bold py-2.5 px-5 rounded-full text-sm inline-flex items-center gap-2 transition shadow-md w-full justify-center">
                             <i class="fas fa-tag"></i> Lihat Detail Harga
                         </button>
                     </div>
                 </div>
                 
-                <!-- Metode 6: Stapler -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="500">
-                    <div class="method-img-container h-56 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
+                <!-- Metode 3: Cetak Jahit -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="method-img-container h-48 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
+                        <img src="https://infokhitan.com/gomco-png/" 
+                             alt="Metode Cetak Jahit" 
+                             class="method-img">
+                    </div>
+                    <div class="p-6 text-center">
+                        <div class="w-14 h-14 bg-gradient-to-br from-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-circle text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-dark text-lg">Cetak Jahit</h3>
+                        <p class="text-gray-500 text-sm mt-1">Menggunakan cetakan berukuran untuk hasil yang rapi dengan finishing jahit, cocok untuk ukuran besar</p>
+                        <div class="mt-3 text-left text-xs text-gray-600 bg-gray-50 p-3 rounded-lg">
+                            <p class="font-semibold text-brand-dark">Kelebihan:</p>
+                            <ul class="list-disc pl-4 space-y-0.5">
+                                <li>Rekomendasi untuk ukuran diatas 22mm</li>
+                                <li>Benang jahit berkualitas</li>
+                            </ul>
+                        </div>
+                        <button onclick="openModal('modal-price-gomco')" class="mt-4 bg-accent hover:bg-accent/90 text-white font-bold py-2.5 px-5 rounded-full text-sm inline-flex items-center gap-2 transition shadow-md w-full justify-center">
+                            <i class="fas fa-tag"></i> Lihat Detail Harga
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Metode 4: Stapler -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="method-img-container h-48 w-full bg-gradient-to-br from-gray-50 to-brand-lighter/30">
                         <img src="https://infokhitan.com/rekomendasi-tempat-khitan-di-semarang/stapler-rumah-sunat-jogja-png/" 
                              alt="Metode Stapler" 
                              class="method-img">
@@ -619,8 +647,14 @@
                         <div class="w-14 h-14 bg-gradient-to-br from-accent to-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-bolt text-white text-xl"></i>
                         </div>
-                        <h3 class="font-bold text-brand-dark text-lg">Metode Stapler</h3>
-                        <p class="text-gray-500 text-sm mt-2">Proses cepat, minim nyeri, tanpa jahitan</p>
+                        <h3 class="font-bold text-brand-dark text-lg">Stapler</h3>
+                        <p class="text-gray-500 text-sm mt-1">Rekomendasi untuk ukuran besar dan khitan dewasa</p>
+                        <div class="mt-3 text-left text-xs text-gray-600 bg-gray-50 p-3 rounded-lg">
+                            <p class="font-semibold text-brand-dark">Kelebihan:</p>
+                            <ul class="list-disc pl-4 space-y-0.5">
+                                <li>Pengerjaan cepat</li>
+                            </ul>
+                        </div>
                         <button onclick="openModal('modal-price-stapler')" class="mt-4 bg-accent hover:bg-accent/90 text-white font-bold py-2.5 px-5 rounded-full text-sm inline-flex items-center gap-2 transition shadow-md w-full justify-center">
                             <i class="fas fa-tag"></i> Lihat Detail Harga
                         </button>
@@ -630,63 +664,90 @@
         </div>
     </section>
 
+    <!-- ==================== PAKET KHITAN ==================== -->
+    <section id="paket" class="py-20 px-5 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-accent font-semibold uppercase tracking-wider text-sm">Pilihan Paket</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">Beberapa Pilihan Paket Khitan</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
+                <p class="text-gray-500 mt-4">Pilih paket yang sesuai dengan kebutuhan Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Paket Silver -->
+                <div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center shadow-lg" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-star text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark">Paket Silver</h3>
+                    <div class="my-4">
+                        <span class="text-4xl font-extrabold text-accent">Hubungi</span>
+                        <span class="text-xl text-gray-500">Kami</span>
+                    </div>
+                    <ul class="text-left text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Metode Standar</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Bius Lokal</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Obat & Perawatan</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Kontrol Gratis</span></li>
+                    </ul>
+                    <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20paket%20SILVER" target="_blank" class="btn-shine bg-accent hover:bg-accent/90 text-white font-bold py-3 px-6 rounded-full text-sm inline-flex items-center gap-2 transition w-full justify-center">
+                        <i class="fab fa-whatsapp"></i> Tanya Harga
+                    </a>
+                </div>
+                
+                <!-- Paket Gold -->
+                <div class="card-hover bg-white border-2 border-warm rounded-2xl p-8 text-center shadow-xl transform md:-translate-y-4 relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-warm text-white text-xs font-bold px-4 py-1 rounded-full">Populer</div>
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-crown text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark">Paket Gold</h3>
+                    <div class="my-4">
+                        <span class="text-4xl font-extrabold text-accent">Hubungi</span>
+                        <span class="text-xl text-gray-500">Kami</span>
+                    </div>
+                    <ul class="text-left text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Metode Cauter / Laser</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Bius Lokal</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Obat & Perawatan Lengkap</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Kontrol Gratis</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Hadiah & Sertifikat</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Multivitamin</span></li>
+                    </ul>
+                    <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20paket%20GOLD" target="_blank" class="btn-shine bg-warm hover:bg-warm/90 text-white font-bold py-3 px-6 rounded-full text-sm inline-flex items-center gap-2 transition w-full justify-center">
+                        <i class="fab fa-whatsapp"></i> Tanya Harga
+                    </a>
+                </div>
+                
+                <!-- Paket Platinum -->
+                <div class="card-hover bg-white border-2 border-brand-primary rounded-2xl p-8 text-center shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-primary to-brand-dark rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-gem text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-dark">Paket Platinum</h3>
+                    <div class="my-4">
+                        <span class="text-4xl font-extrabold text-accent">Hubungi</span>
+                        <span class="text-xl text-gray-500">Kami</span>
+                    </div>
+                    <ul class="text-left text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Metode Laser / Stapler</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Bius Lokal</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Obat & Perawatan Premium</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Kontrol Gratis</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Hadiah & Sertifikat</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Multivitamin</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent mt-0.5"></i> <span>Konsultasi 24 Jam</span></li>
+                    </ul>
+                    <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20paket%20PLATINUM" target="_blank" class="btn-shine bg-brand-primary hover:bg-brand-dark text-white font-bold py-3 px-6 rounded-full text-sm inline-flex items-center gap-2 transition w-full justify-center">
+                        <i class="fab fa-whatsapp"></i> Tanya Harga
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== MODAL POPUP UNTUK PAKET HARGA METODE ==================== -->
-    <!-- Modal Harga Laser -->
-    <div id="modal-price-laser" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-laser')">
-        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal('modal-price-laser')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
-                <i class="fas fa-times text-gray-500 text-sm"></i>
-            </button>
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-laser text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Sunat Laser</h3>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Metode Laser Presisi Tinggi</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Obat & Perawatan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah untuk Anak</span></div>
-            </div>
-            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
-                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
-            </div>
-            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20LASER" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
-                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
-            </a>
-        </div>
-    </div>
-
-    <!-- Modal Harga Cauter -->
-    <div id="modal-price-cauter" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-cauter')">
-        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal('modal-price-cauter')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
-                <i class="fas fa-times text-gray-500 text-sm"></i>
-            </button>
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-bolt text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Sunat Cauter</h3>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Metode Cauter Tanpa Darah</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Obat & Perawatan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah untuk Anak</span></div>
-            </div>
-            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
-                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
-            </div>
-            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20CAUTER" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
-                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
-            </a>
-        </div>
-    </div>
-
     <!-- Modal Harga Klem -->
     <div id="modal-price-klem" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-klem')">
         <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
@@ -697,14 +758,16 @@
                 <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
                     <i class="fas fa-compress text-white text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Sunat Klem</h3>
+                <h3 class="text-xl font-extrabold text-brand-dark">Paket Metode Klem</h3>
+                <p class="text-sm text-gray-500">Rekomendasi untuk khitan bayi dan yang masih memakai diapers</p>
             </div>
             <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Metode Klem Tanpa Jahitan</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Jahitan</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Balutan</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bisa terkena air/mandi</span></div>
                 <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Obat & Perawatan</span></div>
                 <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah untuk Anak</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
             </div>
             <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
                 <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
@@ -715,35 +778,7 @@
         </div>
     </div>
 
-    <!-- Modal Harga Gomco -->
-    <div id="modal-price-gomco" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-gomco')">
-        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal('modal-price-gomco')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
-                <i class="fas fa-times text-gray-500 text-sm"></i>
-            </button>
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-circle text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Sunat Gomco</h3>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Metode Gomco Tanpa Jahitan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Obat & Perawatan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah untuk Anak</span></div>
-            </div>
-            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
-                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
-            </div>
-            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20GOMCO" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
-                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
-            </a>
-        </div>
-    </div>
-
-    <!-- Modal Harga Lem -->
+    <!-- Modal Harga Lem/Sealer -->
     <div id="modal-price-lem" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-lem')">
         <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
             <button onclick="closeModal('modal-price-lem')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
@@ -753,19 +788,51 @@
                 <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
                     <i class="fas fa-droplet text-white text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Sunat Lem</h3>
+                <h3 class="text-xl font-extrabold text-brand-dark">Paket Metode Sealer/Lem</h3>
+                <p class="text-sm text-gray-500">Metode paling banyak dipilih untuk kenyamanan</p>
             </div>
             <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Metode Lem Tanpa Jahitan</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hasil Rapi</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Balutan</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa terpasang alat</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Penyembuhan lebih cepat</span></div>
                 <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Obat & Perawatan</span></div>
                 <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah untuk Anak</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
             </div>
             <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
                 <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
             </div>
             <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20LEM" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
+                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Harga Cetak Jahit -->
+    <div id="modal-price-gomco" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-gomco')">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
+            <button onclick="closeModal('modal-price-gomco')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
+                <i class="fas fa-times text-gray-500 text-sm"></i>
+            </button>
+            <div class="text-center mb-4">
+                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-circle text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-brand-dark">Paket Cetak Jahit</h3>
+                <p class="text-sm text-gray-500">Cocok untuk ukuran diatas 22mm</p>
+            </div>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hasil Rapi</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Benang jahit berkualitas</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
+            </div>
+            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
+                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
+            </div>
+            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20CETAK%20JAHIT" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
                 <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
             </a>
         </div>
@@ -781,14 +848,15 @@
                 <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
                     <i class="fas fa-bolt text-white text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Sunat Stapler</h3>
+                <h3 class="text-xl font-extrabold text-brand-dark">Paket Metode Stapler</h3>
+                <p class="text-sm text-gray-500">Rekomendasi untuk ukuran besar dan khitan dewasa</p>
             </div>
             <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Metode Stapler Tanpa Jahitan</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Pengerjaan Cepat</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Jahitan</span></div>
                 <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Obat & Perawatan</span></div>
                 <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah untuk Anak</span></div>
+                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
             </div>
             <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
                 <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
@@ -799,84 +867,73 @@
         </div>
     </div>
 
-    
-<!-- ==================== LAYANAN BERDASARKAN PASIEN ==================== -->
-<section id="layanan" class="py-20 px-5 bg-white">
-    <div class="container mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-            <span class="text-accent font-semibold uppercase tracking-wider text-sm">Layanan Kami</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">Sunat untuk Semua Kebutuhan</h2>
-            <div class="w-16 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
-            <p class="text-gray-500 mt-4">Layanan spesifik sesuai kebutuhan setiap pasien</p>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
-            <!-- Layanan 1: Sunat Bayi -->
-            <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="0">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-baby text-white text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-brand-dark text-sm md:text-base">Sunat Bayi</h3>
-                <p class="text-gray-500 text-xs mt-2">Usia 0-1 tahun, prosedur lembut & aman</p>
+    <!-- ==================== LAYANAN BERDASARKAN PASIEN ==================== -->
+    <section id="layanan" class="py-20 px-5 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-accent font-semibold uppercase tracking-wider text-sm">Layanan Kami</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">Layanan Khitan</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
+                <p class="text-gray-500 mt-4">Layanan spesifik sesuai kebutuhan setiap pasien</p>
             </div>
             
-            <!-- Layanan 2: Sunat Anak -->
-            <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="100">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-child text-white text-2xl"></i>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                <!-- Layanan 1: Khitan Bayi -->
+                <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-baby text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark text-sm md:text-base">Khitan Bayi</h3>
+                    <p class="text-gray-500 text-xs mt-2">Usia 1-12 bulan</p>
                 </div>
-                <h3 class="font-bold text-brand-dark text-sm md:text-base">Sunat Anak</h3>
-                <p class="text-gray-500 text-xs mt-2">Pendekatan ramah, minim trauma</p>
-            </div>
-            
-            <!-- Layanan 3: Sunat Dewasa -->
-            <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="200">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-user text-white text-2xl"></i>
+                
+                <!-- Layanan 2: Khitan Anak -->
+                <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-child text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark text-sm md:text-base">Khitan Anak</h3>
+                    <p class="text-gray-500 text-xs mt-2">Usia 1-14 tahun</p>
                 </div>
-                <h3 class="font-bold text-brand-dark text-sm md:text-base">Sunat Dewasa</h3>
-                <p class="text-gray-500 text-xs mt-2">Profesional untuk segala usia</p>
-            </div>
-            
-            <!-- Layanan 4: Sunat Berkebutuhan Khusus (Autis) -->
-            <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="300">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-puzzle-piece text-white text-2xl"></i>
+                
+                <!-- Layanan 3: Khitan Dewasa -->
+                <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark text-sm md:text-base">Khitan Dewasa</h3>
+                    <p class="text-gray-500 text-xs mt-2">Usia diatas 14 tahun</p>
                 </div>
-                <h3 class="font-bold text-brand-dark text-sm md:text-base">Sunat Autis</h3>
-                <p class="text-gray-500 text-xs mt-2">Pendekatan khusus, penuh empati</p>
-            </div>
-            
-            <!-- Layanan 5: Sunat Revisi/Perbaikan -->
-            <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="400">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-screwdriver-wrench text-white text-2xl"></i>
+                
+                <!-- Layanan 4: Khitan Perbaikan -->
+                <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-screwdriver-wrench text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark text-sm md:text-base">Khitan Perbaikan</h3>
+                    <p class="text-gray-500 text-xs mt-2">Memperbaiki hasil khitan sebelumnya</p>
                 </div>
-                <h3 class="font-bold text-brand-dark text-sm md:text-base">Sunat Revisi</h3>
-                <p class="text-gray-500 text-xs mt-2">Perbaikan hasil sunat sebelumnya</p>
-            </div>
-            
-            <!-- Layanan 6: Sunat Anak Gemuk -->
-            <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="500">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-weight-scale text-white text-2xl"></i>
+                
+                <!-- Layanan 5: Khitan Massal -->
+                <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark text-sm md:text-base">Khitan Massal</h3>
+                    <p class="text-gray-500 text-xs mt-2">Dalam rangka event tertentu</p>
                 </div>
-                <h3 class="font-bold text-brand-dark text-sm md:text-base">Sunat Anak Gemuk</h3>
-                <p class="text-gray-500 text-xs mt-2">Penanganan khusus pasien besar</p>
-            </div>
-            
-            <!-- Layanan 7: Sunatan Massal -->
-            <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="600">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-users text-white text-2xl"></i>
+                
+                <!-- Layanan 6: Khitan Kondisi Khusus -->
+                <div class="card-hover bg-brand-lighter rounded-2xl p-6 text-center border border-accent-light/50" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark text-sm md:text-base">Khitan Kondisi Khusus</h3>
+                    <p class="text-gray-500 text-xs mt-2">Gemuk, autis, ADHD, down syndrome</p>
                 </div>
-                <h3 class="font-bold text-brand-dark text-sm md:text-base">Sunatan Massal</h3>
-                <p class="text-gray-500 text-xs mt-2">Paket spesial untuk acara/event</p>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- ==================== GALERI ==================== -->
     <section id="galeri" class="py-20 px-5 bg-brand-lighter/30">
@@ -893,39 +950,45 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="gallery-img-wrapper h-72 md:h-96">
-                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg5SEC_NjaSudAbW9uueecEWicwJevjfXuFefPKPUdC2ZRPdK3pfI5HSSHUuXJOwf84f8-wdEyFqwDyZ_sgoArs-dRaBcCgWTg3A3NrcGa4iAdaJMduRgTa7uM8V5jvje9xsI6wQQ5GXZYIh0w1NqeLc-PyY7xwwB3-dxMCS3_RO5wycrywlLS7r1InoRrP" alt="Ruang Klinik" class="w-full h-full object-cover">
+                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjnaxf-gTRD5dig8PEfkcrEBINEs5gyxPoVlc8nrIWvMoveH7vysM2p4wMYGwVdivf4dJ-9mmEx_4ucid0eZK7ObI4k6mzgTtd_-JSdAKv0V_DJTT_1ng83UM7ZxcgEC-LzeT1CaHqaqvQTls4CcAYDQPOpzB5q3Y4viollJRagGttqPRntptnt89oZ5rm1" alt="Suasana Klinik" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-3"></p>
+                        <p class="text-center text-sm text-gray-500 mt-3">Suasana Klinik Nyaman</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-img-wrapper h-72 md:h-96">
-                            <img src="hhttps://blogger.googleusercontent.com/img/a/AVvXsEgtm3wUbjsRgyRTt7DO8300oh-swXjThkS5o3XgntjTDJHEuh_zdWPc1ALal-UrTql19EyFaaYX3nuk7nmHXYknSUpOjsUf3uG02ptpF6-rxtywcRBFm-MYp6has9GGwHcSg5lyNKG1Y_wC88QI7jzuHv3HdACv3gp6z1C5ra42-i1FKLaXLE1WWTGv_gNr" alt="Ruang Tunggu" class="w-full h-full object-cover">
+                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhkOtHCrn0AkgP9qtpwamQrqn-6R6_JrhA-P9sLYKtEmEg6iwg2SJIZFN1fpv4X0M2538orAL41Lu9OjJtv2LSB_8k-z5H12a81fj_kj-8SAZwr_bnAeNGou_DkpT1slniSRbJG7nY4a9_K6Xa7SA5-uWU-8K7wwKnHrmBHeurDnmFISsDrcBYDPRsDBWs3" alt="Ruang Tunggu" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-3"></p>
+                        <p class="text-center text-sm text-gray-500 mt-3">Ruang Tunggu Ramah Anak</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery-img-wrapper h-72 md:h-96">
+                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgLvAw5QaG6hDiCm-1mD1veBhoqRT3m1U355kbsbp3ue7e3p9UwHM9tzmc7vb5c6rcgLXxLPYVophZVJF-MwI0QFTMa-ruD92HhGGvBEYZmS7pg9qVRiRhx9EsEFOVfytvb2dGZvA6vdvw0A4WvUfykUCdCBXS9hecCmV_QjlalL4b-HWIYh6nCLGOfPT2o" alt="Area Bermain" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-3">Area Bermain Anak</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-img-wrapper h-72 md:h-96">
                             <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjz_31aXsDTByvI0BFwceEa_ztECMrh3I19xv-7rJ_rkKkErc3OATA9RWYwtFiLmkKq69Y5eGefVceHukALKFGP1G_g25hKl3DJIf-bocHXJSrdnHaOLOrnkfjXrCezyuY1lLZQ1taGLiLVFq_W4_-NYxQMfsggv8HtYqzn85N2Hk-RIjeYlxF5gOxw0fRc" alt="Tim Medis" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-3"></p>
+                        <p class="text-center text-sm text-gray-500 mt-3">Tim Medis Profesional</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-img-wrapper h-72 md:h-96">
                             <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg7RqpYMKIdHG5Ehi1LGKFtJll7PmBDpK67JKrRLEywkIt0232LueXfyVe145P5e7uUTcw6C3Z8xHmzFiKnIvCL2ql5J4qBRCiDSVgUUSsO5tYvBcOH6sG13VGz-t-3Mrp4pw6APIDiKEuVEEba3kR4zlnW-OHiqNyYPRMqg7Qij4GYTbLE6kj8EngAKyLg" alt="Peralatan" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-3"></p>
+                        <p class="text-center text-sm text-gray-500 mt-3">Peralatan Medis Modern</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-img-wrapper h-72 md:h-96">
-                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg4Ut9oaJytyCbzUI9_M1IGZ8BfFMlWmIOqo6ewYB5weh6dcas-eSr3rH7JkAFqIgc4BUCiA2aH9TSD74stYZ9Gz2auASueg1TW8h7OtzdD4bU_C040PZ7KwIrRj6PCo-wFEOA5IaOJJjifkLsLnqWdgIcDlp-xVFWqoZN3k42qRLqDARWBr6OKn2XWw5EW" alt="Area Parkir" class="w-full h-full object-cover">
+                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg4Ut9oaJytyCbzUI9_M1IGZ8BfFMlWmIOqo6ewYB5weh6dcas-eSr3rH7JkAFqIgc4BUCiA2aH9TSD74stYZ9Gz2auASueg1TW8h7OtzdD4bU_C040PZ7KwIrRj6PCo-wFEOA5IaOJJjifkLsLnqWdgIcDlp-xVFWqoZN3k42qRLqDARWBr6OKn2XWw5EW" alt="Parkir" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-3"></p>
+                        <p class="text-center text-sm text-gray-500 mt-3">Area Parkir Luas</p>
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-img-wrapper h-72 md:h-96">
-                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEitMHqymJpQ9bXmlN1uXVNCSGFYRQWlTnVrrpEeAeWXzLwSYYg6kw88Qz67fRveA_dCQimrMWygIIp-5irtQaD0d1OazpaPky5WYuUSygHzd17ZCaSS5YqLCA2xKs_YhudcQU9K74KpcvFiLQqc7uf852ki8VeGsmI_Qtto9BpmlLzaswmyCDKR-lGDEnfz" alt="Dekorasi Ramah Anak" class="w-full h-full object-cover">
+                            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEitMHqymJpQ9bXmlN1uXVNCSGFYRQWlTnVrrpEeAeWXzLwSYYg6kw88Qz67fRveA_dCQimrMWygIIp-5irtQaD0d1OazpaPky5WYuUSygHzd17ZCaSS5YqLCA2xKs_YhudcQU9K74KpcvFiLQqc7uf852ki8VeGsmI_Qtto9BpmlLzaswmyCDKR-lGDEnfz" alt="Dekorasi" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-3"></p>
+                        <p class="text-center text-sm text-gray-500 mt-3">Dekorasi Ramah Anak</p>
                     </div>
                 </div>
                 <div class="swiper-pagination !relative mt-6"></div>
@@ -935,52 +998,12 @@
         </div>
     </section>
 
-    <!-- ==================== INSTAGRAM FEED ==================== -->
-    <section id="instagram" class="py-20 px-5 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-accent font-semibold uppercase tracking-wider text-sm">Media Sosial</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-3">
-                    <i class="fab fa-instagram text-pink-500 mr-2"></i> Ikuti Kami di Instagram
-                </h2>
-                <div class="w-16 h-1 bg-accent mx-auto mt-5 rounded-full"></div>
-                <p class="text-gray-500 mt-4">Update terbaru, tips kesehatan, dan testimoni pasien</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="insta-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="0">
-                    <div class="relative">
-                        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjF59E7QFusmLrJXk_mGLGP7RIJz-omyhtRC7Mhm8LWgFkDJ5k1H0F9L4M54CNvezcZXbxX6-c8RwJ9c45IE7Fs1L7A8U0SjpjOFJpKkpjXVYdP63q8dxyCsTvPbDVraxufRw0VlidVfP4GAE5TLl9srXRjyQ8zNw-E_f5gnxKs8jE8N8F2Zhk0SgGUeeUF" alt="Instagram Post" class="w-full h-56 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4">
-                            <span class="text-white text-xs"><i class="far fa-heart mr-1"></i> 10 suka</span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center gap-2 mb-3">
-                            <i class="fab fa-instagram text-pink-500 text-xl"></i>
-                            <span class="font-semibold text-sm text-brand-dark">@sahabatkhitankediri</span>
-                        </div>
-                        <p class="text-gray-600 text-sm">Suasana klinik yang bersih dan nyaman. Si kecil dijamin betah! ✨</p>
-                        <a href="https://www.instagram.com/sahabatkhitankediri/" target="_blank" class="inline-block mt-3 text-pink-500 text-sm font-semibold hover:underline">Lihat di Instagram →</a>
-                    </div>
-                </div>
-                
-                
-            
-            <div class="text-center mt-10" data-aos="fade-up">
-                <a href="https://www.instagram.com/sahabatkhitankediri/" target="_blank" class="btn-shine bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg inline-flex items-center gap-2 shadow-xl transition">
-                    <i class="fab fa-instagram text-xl"></i> Kunjungi Instagram Kami
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- ==================== TESTIMONIAL ==================== -->
     <section id="testimoni" class="py-20 px-5 bg-gradient-to-br from-brand-dark to-brand-primary text-white">
         <div class="container mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
                 <span class="text-warm font-semibold uppercase tracking-wider text-sm">Testimoni Pasien</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold mt-3">Rating Sempurna 5.0 ⭐</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-3">Apa Kata Mereka ⭐</h2>
                 <div class="w-16 h-1 bg-warm mx-auto mt-5 rounded-full"></div>
                 <p class="text-brand-light mt-4">Kepercayaan dan kepuasan pasien adalah prioritas kami</p>
             </div>
@@ -988,36 +1011,36 @@
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="testimonial-card bg-white/10 backdrop-blur-sm rounded-2xl p-7 border border-white/20" data-aos="fade-up" data-aos-delay="0">
                     <div class="flex text-warm mb-4">⭐⭐⭐⭐⭐</div>
-                    <p class="italic text-white/90 leading-relaxed">"Pelayanan sangat ramah. Anak saya yang tadinya takut jadi tenang karena tempatnya nyaman, ada mainannya. Proses cepat, penyembuhan juga cepat. Top banget!"</p>
+                    <p class="italic text-white/90 leading-relaxed">"Sahabat Khitan Kediri sangat bagus, Profesional, Dokternya Ramah, baik hati, khitan disana sangat menyenangkan, anaknya sangat suka, dapat hadiah dan juga sertifikat, di pantau terus sampai sembuh."</p>
                     <div class="mt-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-warm rounded-full flex items-center justify-center text-brand-dark font-bold text-sm">A</div>
+                        <div class="w-10 h-10 bg-warm rounded-full flex items-center justify-center text-brand-dark font-bold text-sm">H</div>
                         <div>
-                            <p class="font-bold text-sm">Bpk. Ahmad</p>
-                            <p class="text-brand-light/70 text-xs">Mojoroto, Kediri</p>
+                            <p class="font-bold text-sm">Hervin Loket</p>
+                            <p class="text-brand-light/70 text-xs">Kediri • 2 bulan lalu</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card bg-white/10 backdrop-blur-sm rounded-2xl p-7 border border-white/20" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex text-warm mb-4">⭐⭐⭐⭐⭐</div>
-                    <p class="italic text-white/90 leading-relaxed">"Sunat dewasa ternyata nggak sakit. Dokternya profesional, konsultasi 24 jam sangat membantu. Recommended buat yang masih ragu!"</p>
+                    <p class="italic text-white/90 leading-relaxed">"Dokternya baik dan ramah banget, staf dan pelayanannya puas banget, tempatnya bersih... Anak saya proses khitan hanya 15 menit selesai, sore khitan besok paginya sudah main seperti nggak habis khitan. Recommended banget!"</p>
                     <div class="mt-6 flex items-center gap-3">
                         <div class="w-10 h-10 bg-warm rounded-full flex items-center justify-center text-brand-dark font-bold text-sm">R</div>
                         <div>
-                            <p class="font-bold text-sm">Rizky</p>
-                            <p class="text-brand-light/70 text-xs">Kediri</p>
+                            <p class="font-bold text-sm">riris rafida</p>
+                            <p class="text-brand-light/70 text-xs">Kediri • 4 bulan lalu</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card bg-white/10 backdrop-blur-sm rounded-2xl p-7 border border-white/20" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex text-warm mb-4">⭐⭐⭐⭐⭐</div>
-                    <p class="italic text-white/90 leading-relaxed">"Lokasi di Dermo, Mojoroto mudah dijangkau. Parkir luas. Anak saya cepet sembuhnya, 2 hari udah bisa main lagi. Komunikasi dokter juga enak."</p>
+                    <p class="italic text-white/90 leading-relaxed">"Tempat khitan bagus, saya rekomendasikan di sini. Hasil khitan estetik. Proses penyembuhan pasca khitan bagus sekali, anak sudah bisa langsung bermain. Selalu dipantau oleh dokter pasca operasi via WA."</p>
                     <div class="mt-6 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-warm rounded-full flex items-center justify-center text-brand-dark font-bold text-sm">S</div>
+                        <div class="w-10 h-10 bg-warm rounded-full flex items-center justify-center text-brand-dark font-bold text-sm">H</div>
                         <div>
-                            <p class="font-bold text-sm">Ibu Sari</p>
-                            <p class="text-brand-light/70 text-xs">Kediri</p>
+                            <p class="font-bold text-sm">haidar bagir</p>
+                            <p class="text-brand-light/70 text-xs">Kediri • 1 bulan lalu</p>
                         </div>
                     </div>
                 </div>
@@ -1211,58 +1234,36 @@
                 <div class="grid md:grid-cols-2 gap-4 mt-4">
                     <div class="bg-brand-lighter/30 p-4 rounded-xl">
                         <div class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-bolt text-accent"></i>
-                            <h4 class="font-bold text-brand-dark">Metode Cauter</h4>
-                        </div>
-                        <p class="text-xs text-gray-600">Menggunakan energi panas listrik, memotong sekaligus membekukan pembuluh darah. Minim perdarahan, proses cepat 15-25 menit.</p>
-                    </div>
-                    <div class="bg-brand-lighter/30 p-4 rounded-xl">
-                        <div class="flex items-center gap-2 mb-2">
                             <i class="fas fa-compress text-accent"></i>
-                            <h4 class="font-bold text-brand-dark">Metode Klem (Clamp)</h4>
+                            <h4 class="font-bold text-brand-dark">Metode Klem</h4>
                         </div>
-                        <p class="text-xs text-gray-600">Tanpa jahitan, menggunakan alat khusus. Pemulihan cepat 5-7 hari, nyeri minimal, tanpa bekas luka jahitan.</p>
-                    </div>
-                    <div class="bg-brand-lighter/30 p-4 rounded-xl">
-                        <div class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-laser text-accent"></i>
-                            <h4 class="font-bold text-brand-dark">Metode Laser</h4>
-                        </div>
-                        <p class="text-xs text-gray-600">Teknologi tercanggih dengan presisi tinggi. Risiko infeksi sangat rendah, bekas luka paling rapi, durasi 10-20 menit.</p>
-                    </div>
-                    <div class="bg-brand-lighter/30 p-4 rounded-xl">
-                        <div class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-cut text-accent"></i>
-                            <h4 class="font-bold text-brand-dark">Metode Konvensional</h4>
-                        </div>
-                        <p class="text-xs text-gray-600">Metode klasik yang aman dan terjangkau. Hasil permanen, tersedia di semua klinik dengan biaya kompetitif.</p>
-                    </div>
-                    <div class="bg-brand-lighter/30 p-4 rounded-xl">
-                        <div class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-circle text-accent"></i>
-                            <h4 class="font-bold text-brand-dark">Metode Gomco</h4>
-                        </div>
-                        <p class="text-xs text-gray-600">Metode tanpa jahitan dengan hasil rapi. Penyembuhan 5-7 hari, cocok untuk semua usia.</p>
+                        <p class="text-xs text-gray-600">Rekomendasi untuk khitan bayi dan yang masih memakai diapers. Tanpa jahitan, tanpa balutan, bisa terkena air.</p>
                     </div>
                     <div class="bg-brand-lighter/30 p-4 rounded-xl">
                         <div class="flex items-center gap-2 mb-2">
                             <i class="fas fa-droplet text-accent"></i>
-                            <h4 class="font-bold text-brand-dark">Metode Lem</h4>
+                            <h4 class="font-bold text-brand-dark">Sealer / Lem</h4>
                         </div>
-                        <p class="text-xs text-gray-600">Tanpa jahitan dan tanpa darah. Menggunakan lem khusus medis untuk menutup luka. Penyembuhan 5-7 hari.</p>
+                        <p class="text-xs text-gray-600">Metode paling banyak dipilih untuk kenyamanan. Hasil rapi, tanpa balutan, tanpa terpasang alat, penyembuhan lebih cepat.</p>
+                    </div>
+                    <div class="bg-brand-lighter/30 p-4 rounded-xl">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-circle text-accent"></i>
+                            <h4 class="font-bold text-brand-dark">Cetak Jahit</h4>
+                        </div>
+                        <p class="text-xs text-gray-600">Menggunakan cetakan berukuran untuk hasil rapi dengan finishing jahit. Rekomendasi untuk ukuran diatas 22mm.</p>
+                    </div>
+                    <div class="bg-brand-lighter/30 p-4 rounded-xl">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-bolt text-accent"></i>
+                            <h4 class="font-bold text-brand-dark">Stapler</h4>
+                        </div>
+                        <p class="text-xs text-gray-600">Rekomendasi untuk ukuran besar dan khitan dewasa. Pengerjaan cepat.</p>
                     </div>
                 </div>
                 
-                <h4 class="font-bold text-brand-dark text-lg mt-4">🎯 Rekomendasi Metode Berdasarkan Usia</h4>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li><strong>Bayi (0-1 tahun):</strong> Metode Klem, Gomco, atau Laser - prosedur cepat, pemulihan optimal</li>
-                    <li><strong>Anak-anak (2-10 tahun):</strong> Semua metode bisa, disesuaikan dengan kondisi anak</li>
-                    <li><strong>Remaja/Dewasa:</strong> Laser, Cauter, atau Stapler - hasil rapi, minim rasa sakit</li>
-                    <li><strong>Pasien dengan berat badan berlebih:</strong> Laser atau Stapler - presisi tinggi untuk hasil terbaik</li>
-                </ul>
-                
                 <div class="bg-brand-lighter/30 p-4 rounded-xl mt-4">
-                    <p class="text-sm text-gray-600"><strong class="text-brand-dark">💡 Yang perlu diingat:</strong> Setiap metode memiliki keunggulan masing-masing. Dokter akan merekomendasikan metode terbaik berdasarkan usia, kondisi kesehatan, dan kebutuhan pasien.</p>
+                    <p class="text-sm text-gray-600"><strong class="text-brand-dark">💡 Catatan:</strong> Rekomendasi pemilihan metode disesuaikan ukuran diameter penis dan tipe penis. Konsultasikan dengan dokter untuk pilihan terbaik.</p>
                 </div>
             </div>
             <div class="mt-6 pt-4 border-t border-gray-100">
@@ -1280,12 +1281,12 @@
                 <!-- Kolom 1: Tentang -->
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full overflow-hidden bg-white p-1 flex items-center justify-center">
-                            <span class="font-extrabold text-brand-primary text-lg">SK</span>
-                        </div>
+                        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjqfD6EEkQ4vD_ylDnyhx_vNHsqD33mLmYkWSh9FKo962qZHMrz1qINqxcLanzyq3wTpDK9yJ8lwpJze6iTOgAoV9tphs-Mg72DS-oHMVtpLPIwL-DZVa0kn8Yk4XA6NHzoLU1igcHZqjZeX_3ygZ_SIo2xA7x3cd9PZkd-5RRYeprsVzecb9uhwCUCRzB8" 
+                             alt="Logo Sahabat Khitan" 
+                             class="w-10 h-10 rounded-lg object-cover">
                         <span class="font-bold text-xl">Sahabat Khitan Kediri</span>
                     </div>
-                    <p class="text-brand-light/70 text-sm leading-relaxed">Klinik khitan modern di Kediri. Melayani sunat bayi, anak, dan dewasa dengan metode minim nyeri. Buka 2 sesi setiap hari, Senin-Minggu.</p>
+                    <p class="text-brand-light/70 text-sm leading-relaxed">Layanan unggulan dari Klinik Pratama Rawat Jalan Tegar Medika. Khitan aman, sehat, modern, dan terjangkau.</p>
                     <div class="flex gap-4 mt-6">
                         <a href="https://www.instagram.com/sahabatkhitankediri/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink-500 transition text-lg"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/6282331386222" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-500 transition text-lg"><i class="fab fa-whatsapp"></i></a>
@@ -1300,6 +1301,7 @@
                         <li><a href="#home" class="hover:text-accent transition">→ Beranda</a></li>
                         <li><a href="#tentang" class="hover:text-accent transition">→ Tentang</a></li>
                         <li><a href="#metode" class="hover:text-accent transition">→ Metode</a></li>
+                        <li><a href="#paket" class="hover:text-accent transition">→ Paket</a></li>
                         <li><a href="#layanan" class="hover:text-accent transition">→ Layanan</a></li>
                         <li><a href="#galeri" class="hover:text-accent transition">→ Galeri</a></li>
                         <li><a href="#artikel" class="hover:text-accent transition">→ Artikel</a></li>
@@ -1312,11 +1314,19 @@
                     <div class="space-y-4 text-sm">
                         <div class="flex items-start gap-3">
                             <i class="fas fa-map-pin text-accent mt-1"></i>
-                            <p class="text-brand-light/70">Jl. Gunung Agung, RT.4/RW.2, Dermo, Kecamatan Mojoroto, Kota Kediri, Jawa Timur 64111, Indonesia</p>
+                            <p class="text-brand-light/70">Jl. Gunung Agung Rt 4 Rw 2, Dermo, Kecamatan Mojoroto, Kota Kediri, Jawa Timur 64111</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <i class="fas fa-phone-alt text-accent"></i>
-                            <p class="text-brand-light/70">+62 823-3138-6222</p>
+                            <p class="text-brand-light/70">082331386222</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <p class="text-brand-light/70">kliniktegarmedika@gmail.com</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-instagram text-accent"></i>
+                            <p class="text-brand-light/70">@sahabatkhitankediri</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <i class="far fa-clock text-accent"></i>
@@ -1324,10 +1334,6 @@
                                 <p class="text-brand-light/70">2 Sesi: 07.00 - 11.00 & 16.00 - 20.00</p>
                                 <p class="text-brand-light/50 text-xs">Senin - Minggu</p>
                             </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fab fa-instagram text-accent"></i>
-                            <p class="text-brand-light/70">@sahabatkhitankediri</p>
                         </div>
                     </div>
                     <!-- Peta kecil -->
@@ -1340,14 +1346,13 @@
             <!-- Bottom Bar -->
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
                 <p class="text-brand-light/40 text-sm">© 2026 Sahabat Khitan Kediri. All rights reserved.</p>
-                <p class="text-brand-light/30 text-xs">Klinik Sunat Modern • Rating 5.0 ⭐ • 2 Sesi Per Hari</p>
+                <p class="text-brand-light/30 text-xs">Aman • Sehat • Modern • Terjangkau • Rating 5.0 ⭐</p>
             </div>
         </div>
     </footer>
 
     <!-- ==================== FLOATING BUTTONS (MAPS & WA) ==================== -->
     <div class="floating-buttons">
-        <!-- Tombol Google Maps dengan icon gambar -->
         <a href="https://maps.app.goo.gl/yBznppfa14g6sN9X7" 
            target="_blank" 
            class="maps-float" 
@@ -1356,7 +1361,6 @@
                  alt="Google Maps Icon">
         </a>
         
-        <!-- Tombol WhatsApp -->
         <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20mau%20tanya." 
            target="_blank" 
            class="wa-float" 
