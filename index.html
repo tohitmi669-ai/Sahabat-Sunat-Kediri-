@@ -273,6 +273,28 @@
             object-fit: cover;
         }
         
+        /* Video Section */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+            background: #000;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-section {
+            background: linear-gradient(135deg, #0B3D5C 0%, #1A7F9E 100%);
+        }
+        
         /* Responsive untuk floating buttons di mobile */
         @media (max-width: 640px) {
             .floating-buttons {
@@ -317,6 +339,7 @@
                 <a href="#paket" class="nav-link hover:text-accent-light transition">Paket</a>
                 <a href="#layanan" class="nav-link hover:text-accent-light transition">Layanan</a>
                 <a href="#galeri" class="nav-link hover:text-accent-light transition">Galeri</a>
+                <a href="#video" class="nav-link hover:text-accent-light transition">Video</a>
                 <a href="#artikel" class="nav-link hover:text-accent-light transition">Artikel</a>
                 <a href="#kontak" class="bg-accent hover:bg-accent/90 text-white px-6 py-2.5 rounded-full transition font-bold shadow-lg btn-shine">Hubungi Kami</a>
             </nav>
@@ -336,6 +359,7 @@
                 <a href="#paket" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">📦 Paket</a>
                 <a href="#layanan" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">👶 Layanan</a>
                 <a href="#galeri" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">🖼️ Galeri</a>
+                <a href="#video" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">🎬 Video</a>
                 <a href="#artikel" class="block py-3 px-4 rounded-xl hover:bg-brand-lighter text-charcoal font-medium transition">📝 Artikel</a>
                 <a href="#kontak" class="block py-3 px-4 rounded-xl bg-accent text-white text-center font-bold transition mt-2">📞 Hubungi Kami</a>
             </nav>
@@ -747,126 +771,6 @@
         </div>
     </section>
 
-    <!-- ==================== MODAL POPUP UNTUK PAKET HARGA METODE ==================== -->
-    <!-- Modal Harga Klem -->
-    <div id="modal-price-klem" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-klem')">
-        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal('modal-price-klem')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
-                <i class="fas fa-times text-gray-500 text-sm"></i>
-            </button>
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-compress text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Metode Klem</h3>
-                <p class="text-sm text-gray-500">Rekomendasi untuk khitan bayi dan yang masih memakai diapers</p>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Jahitan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Balutan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bisa terkena air/mandi</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
-            </div>
-            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
-                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
-            </div>
-            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20KLEM" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
-                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
-            </a>
-        </div>
-    </div>
-
-    <!-- Modal Harga Lem/Sealer -->
-    <div id="modal-price-lem" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-lem')">
-        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal('modal-price-lem')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
-                <i class="fas fa-times text-gray-500 text-sm"></i>
-            </button>
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-droplet text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Metode Sealer/Lem</h3>
-                <p class="text-sm text-gray-500">Metode paling banyak dipilih untuk kenyamanan</p>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hasil Rapi</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Balutan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa terpasang alat</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Penyembuhan lebih cepat</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
-            </div>
-            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
-                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
-            </div>
-            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20LEM" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
-                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
-            </a>
-        </div>
-    </div>
-
-    <!-- Modal Harga Cetak Jahit -->
-    <div id="modal-price-gomco" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-gomco')">
-        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal('modal-price-gomco')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
-                <i class="fas fa-times text-gray-500 text-sm"></i>
-            </button>
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-circle text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Cetak Jahit</h3>
-                <p class="text-sm text-gray-500">Cocok untuk ukuran diatas 22mm</p>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hasil Rapi</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Benang jahit berkualitas</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
-            </div>
-            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
-                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
-            </div>
-            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20CETAK%20JAHIT" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
-                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
-            </a>
-        </div>
-    </div>
-
-    <!-- Modal Harga Stapler -->
-    <div id="modal-price-stapler" class="modal-overlay fixed inset-0 z-[200] flex items-center justify-center p-5" onclick="closeModalOutside(event, 'modal-price-stapler')">
-        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative" onclick="event.stopPropagation()">
-            <button onclick="closeModal('modal-price-stapler')" class="absolute top-3 right-3 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition">
-                <i class="fas fa-times text-gray-500 text-sm"></i>
-            </button>
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-gradient-to-br from-accent to-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-bolt text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-extrabold text-brand-dark">Paket Metode Stapler</h3>
-                <p class="text-sm text-gray-500">Rekomendasi untuk ukuran besar dan khitan dewasa</p>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Pengerjaan Cepat</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Tanpa Jahitan</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Bius Lokal</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Kontrol Gratis</span></div>
-                <div class="flex items-start gap-2"><i class="fas fa-check-circle text-accent text-sm mt-0.5"></i><span>Hadiah & Sertifikat</span></div>
-            </div>
-            <div class="mt-4 p-3 bg-brand-lighter rounded-xl text-center">
-                <p class="text-2xl font-bold text-accent">💰 Hubungi Kami untuk Harga</p>
-            </div>
-            <a href="https://wa.me/6282331386222?text=Halo%20Sahabat%20Khitan%20Kediri%2C%20saya%20tertarik%20dengan%20paket%20STAPLER" target="_blank" class="mt-5 btn-shine bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full text-sm inline-flex items-center justify-center gap-2 transition w-full">
-                <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
-            </a>
-        </div>
-    </div>
-
     <!-- ==================== LAYANAN BERDASARKAN PASIEN ==================== -->
     <section id="layanan" class="py-20 px-5 bg-white">
         <div class="container mx-auto">
@@ -994,6 +898,29 @@
                 <div class="swiper-pagination !relative mt-6"></div>
                 <div class="swiper-button-next !text-accent"></div>
                 <div class="swiper-button-prev !text-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VIDEO SECTION ==================== -->
+    <section id="video" class="video-section py-20 px-5">
+        <div class="container mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="text-warm font-semibold uppercase tracking-wider text-sm">Video</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-3">Proses Khitan di Sahabat Khitan</h2>
+                <div class="w-16 h-1 bg-warm mx-auto mt-5 rounded-full"></div>
+                <p class="text-brand-light/80 mt-4">Lihat bagaimana kami memberikan pelayanan terbaik untuk pasien</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+                <div class="video-wrapper" id="videoWrapper">
+                    <iframe id="videoPlayer"
+                        src="https://www.blogger.com/video.g?token=AD6v5dy7qD4etr_xKhrnys6hdDBeswU_dXagFMlXozdc3yN4eptWccioNxqpVKOdNIqZqwZYMSaf0jUiP5n5zirwvq1QaXq9KNcGerb3bpsGCZhx_YTyluKRHFkJ1h8F1KlC7oES3ceV&origin=jajal99nm.blogspot.com" 
+                        allow="autoplay; fullscreen; encrypted-media" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="text-center text-brand-light/60 text-sm mt-4">Video testimoni dan proses khitan di Sahabat Khitan Kediri</p>
             </div>
         </div>
     </section>
@@ -1304,6 +1231,7 @@
                         <li><a href="#paket" class="hover:text-accent transition">→ Paket</a></li>
                         <li><a href="#layanan" class="hover:text-accent transition">→ Layanan</a></li>
                         <li><a href="#galeri" class="hover:text-accent transition">→ Galeri</a></li>
+                        <li><a href="#video" class="hover:text-accent transition">→ Video</a></li>
                         <li><a href="#artikel" class="hover:text-accent transition">→ Artikel</a></li>
                     </ul>
                 </div>
@@ -1430,6 +1358,29 @@
                 1024: { slidesPerView: 3, spaceBetween: 25 },
             }
         });
+        
+        // ===== Video Autoplay on Scroll =====
+        let videoAutoplayTriggered = false;
+        const videoSection = document.getElementById('video');
+        const videoPlayer = document.getElementById('videoPlayer');
+        
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !videoAutoplayTriggered) {
+                    videoAutoplayTriggered = true;
+                    // Reload iframe with autoplay parameter
+                    const src = videoPlayer.src;
+                    if (src.indexOf('autoplay=1') === -1) {
+                        const separator = src.indexOf('?') !== -1 ? '&' : '?';
+                        videoPlayer.src = src + separator + 'autoplay=1';
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        if (videoSection) {
+            videoObserver.observe(videoSection);
+        }
         
         // ===== Modal Functions =====
         function openModal(modalId) {
